@@ -18,7 +18,7 @@ module Grendel
       params = {
         :name => name,
         :data => response.body,
-        :content_type => response.headers['content-type'].first
+        :content_type => Array(response.headers['content-type']).first
       }
       Document.new(@user, params)
     end
